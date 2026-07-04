@@ -312,7 +312,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                   <div className="text-xs text-muted-foreground">{user.email}</div>
                   <div className="text-[10px] bg-muted px-1.5 py-0.5 rounded inline-block mt-1 font-medium">Active User</div>
                 </div>
-                <div className="py-1 text-sm border-b">
+                <div className="py-1 text-sm">
                   <Link to="/settings" onClick={() => setProfileOpen(false)} className="block w-full text-left px-4 py-2 hover:bg-accent font-medium">Settings</Link>
                   <button 
                     onClick={() => {
@@ -323,34 +323,6 @@ export function AppShell({ children }: { children: ReactNode }) {
                   >
                     Sign out
                   </button>
-                </div>
-                
-                <div className="bg-muted/40 max-h-64 overflow-y-auto">
-                  <div className="px-4 py-2 text-xs font-semibold text-muted-foreground border-b uppercase tracking-wider">Impersonate Reviewer:</div>
-                  <div className="py-1">
-                    {authUsers.map((u) => {
-                      const isActive = u.id === user.id || u.email === user.email;
-                      return (
-                        <button
-                          key={u.id}
-                          onClick={() => {
-                            setProfileOpen(false);
-                            switchUser(u.email);
-                          }}
-                          className={`w-full text-left px-4 py-2 hover:bg-accent flex items-center justify-between text-xs ${isActive ? "bg-accent font-semibold" : ""}`}
-                        >
-                          <div className="flex items-center gap-2 truncate">
-                            <Avatar user={u} size={20} />
-                            <div className="truncate">
-                              <div>{u.name}</div>
-                              <div className="text-[10px] text-muted-foreground leading-none">{u.role}</div>
-                            </div>
-                          </div>
-                          {isActive && <Check className="h-3 w-3 text-primary shrink-0" />}
-                        </button>
-                      );
-                    })}
-                  </div>
                 </div>
               </div>
             )}
