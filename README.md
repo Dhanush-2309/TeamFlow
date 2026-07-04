@@ -58,7 +58,7 @@ npm run dev
    ```bash
    npm run dev
    ```
-4. Open the application in your browser at **[http://localhost:8080](http://localhost:8080)**.
+4. Open the application in your browser at **[http://localhost:8080](http://localhost:8080)** (or **[http://localhost:8081](http://localhost:8081)** if port 8080 is in use).
 
 ---
 
